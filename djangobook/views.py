@@ -7,7 +7,7 @@ def current_datetime(request):
 	return HttpResponse(html)
 
 def hours_ahead(request, offset):
-	offset = int(offset)
+	#offset = int(offset)
 	dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
 	html = "<html><body> In %s hours(s), it will be %s. </body></html>" % (offset, dt)
 	return HttpResponse(html)
