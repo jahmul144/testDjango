@@ -16,8 +16,10 @@ def current_datetime(request):
 #offset comes from the regex data capture in urls.py
 def hours_ahead(request, offset):
 	offset = int(offset)
-	hour_offset = offset
+	
 	dt = datetime.datetime.now() + datetime.timedelta(hours=offset)
+	hour_offset = offset
 	next_time = dt
 	#locals() we pass the value of locals(), which will include all variables defined at that point in the function’s execution. 
 	return render_to_response('hours_ahead.html', locals())
+	#return render_to_response('hours_ahead.html',{'hour_offset':offset, 'next_time':dt})
