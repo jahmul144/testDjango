@@ -4,4 +4,4 @@ import datetime
 
 def index(request):
 	now = datetime.datetime.now()
-	return('polls.html', {'current_date': now})	
+	return render_to_response('polls.html', {'current_date': now})	
