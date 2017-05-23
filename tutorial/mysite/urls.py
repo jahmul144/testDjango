@@ -1,4 +1,4 @@
-"""mysitetest URL Configuration
+"""mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.10/topics/http/urls/
@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from views import current_datetime, hours_ahead, current_datetime1
+from polls import views
 
 urlpatterns = [
-	 url(r'^time/$',current_datetime1),
-	 url(r'^time/plus/(\d{1,2})/$',hours_ahead),
-	 url(r'^admin/', admin.site.urls),
-	 url(r'^search/$', books.views.search),
+    url(r'^admin/', admin.site.urls),
+    url(r'^home/$', views.index),
 ]
